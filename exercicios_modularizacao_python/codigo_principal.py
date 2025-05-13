@@ -1,5 +1,3 @@
-# Neste arquivo será incluído o código principal, que irá operar as funções aumentar(), diminuir(), dobro() e metade() do arquivo moeda.py
-
 import utilitades.moeda as moeda
 
 from utilitades.dado import leia_dinheiro

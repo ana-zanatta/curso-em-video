@@ -11,10 +11,6 @@ def leia_dinheiro():
             print(f'Erro! "{valor}" não é um número. ')
             return 0
         
-
-    # se não for deve acusar um erro de acordo com o que foi digitado, ex: "a" não é um valor válido ou "" não é um valor válido (com split para caso
-    # digitarem com espaço)
-    
     valor = valor.replace(",", ".")
 
     return float(valor)
