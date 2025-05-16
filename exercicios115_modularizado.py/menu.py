@@ -1,50 +1,22 @@
 # 115a: Vamos criar um menu em Python, usando modularização.
 
-# Função que irá mostrar as opções e liberar o input para o usuário digitar qual opção ele quer (retorna o código da opção):
+import funcoes_menu
 
-def menuPrincipal():
 
-    # Print da mensagem "Menu Principal":
+while True:
 
-    msg = "MENU PRINCIPAL"
-    tamanho = len(msg) + 20
-
-    print("-" * tamanho)
-    print(f"          {msg}")
-    print("-" * tamanho)
-
-    # Print das opções:
-
-    print("1 - Ver pessoas cadastradas")
-    print("2 - Cadastrar pessoas")
-    print("3 - Sair do sistema")
-
-    print("-" * tamanho)
-
-    # usuário digitará a opção no input abaixo:
-
-    while True:
-
-        try:
-            opcao = input("Sua opção: ")
-
-            opcao = int(opcao)
-
-            if opcao in [1, 2, 3]:
-                return opcao
+    retorno_menuPrincipal = funcoes_menu.menuPrincipal()
             
-            else:
-                raise ValueError
+    if retorno_menuPrincipal == 1:
+        funcoes_menu.listar_pessoas()
 
-        except (ValueError, TypeError):
+    elif retorno_menuPrincipal == 2:
+        funcoes_menu.cadastrar_pessoa()
 
-            print("\033[0;31mErro! A opção digitada é inválida, tente novamente... \033[m")
+    elif retorno_menuPrincipal == 3:
+        print("\033[0;31mEncerrando o programa... \033[m")
+        break
 
-            continue
-
-
-retorno_menuPrincipal = menuPrincipal()
-
-print(retorno_menuPrincipal) # Apenas para visualizar que está retornando o código escolhido pelo usuário
-
-
+    else:
+        print("\033[0;31mErro! A opção digitada é inválida, tente novamente... \033[m")
+    
